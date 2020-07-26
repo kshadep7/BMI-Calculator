@@ -9,12 +9,14 @@ import androidx.fragment.app.Fragment;
 
 import com.akash.bmicalculator.databinding.FragmentSplashBinding;
 
+import org.jetbrains.annotations.NotNull;
+
 public class SplashFragment extends Fragment {
 
     private FragmentSplashBinding binding;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NotNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment using data binding
         binding = FragmentSplashBinding.inflate(inflater, container, false);
