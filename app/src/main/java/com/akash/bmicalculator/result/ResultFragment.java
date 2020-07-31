@@ -16,11 +16,13 @@ public class ResultFragment extends Fragment {
     private ResultViewModel mViewModel;
     private ResultFragmentBinding binding;
 
+
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
 
         binding = ResultFragmentBinding.inflate(inflater, container, false);
+//        mViewModel = new ViewModelProvider(this).get(ResultViewModel.class);
         return binding.getRoot();
     }
 

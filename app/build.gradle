@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: "androidx.navigation.safeargs"
+apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion 29
@@ -22,6 +23,18 @@ android {
         }
     }
 
+    // to handle the kotlin jvm compiler issue
+    tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+
+        kotlinOptions {
+            jvmTarget = '1.8'
+            apiVersion = '1.1'
+            languageVersion = '1.1'
+        }
+    }
+
     dataBinding {
         enabled = true
         enabledForTests = true
@@ -31,6 +44,7 @@ android {
 dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.2.0'
 
 
     // for navigation
